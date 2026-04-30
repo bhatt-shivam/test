@@ -146,37 +146,35 @@ button {
 <script>
 
 // 💬 TYPING
-const lines = [
-  "Hey Cherry 🍒...",
-  "Your Gujju is thinking about you again 😏",
-  "Shiva Latha… why are you this cute huh? 😌",
-  "I tried to focus today...",
-  "But my brain said: only Cherry matters ❤️",
-  "You're not just cute… you're illegal level cute ⚠️😍",
-  "So tell me honestly Cherry..."
-];
+const message = `Hey Cherry 🍒...
 
-let i = 0, j = 0, current = "", deleting = false;
+Your Gujju has been thinking about you a lot 😏  
+Like seriously... way more than I should 😌  
 
-function typeEffect() {
-  if (i < lines.length) {
-    if (!deleting && j <= lines[i].length) {
-      current = lines[i].substring(0, j++);
-    } else if (deleting && j >= 0) {
-      current = lines[i].substring(0, j--);
-    }
+Shiva Latha… why are you this cute huh?  
+It’s actually not fair 😤❤️  
 
-    document.getElementById("typing").innerText = current;
+I tried to focus today…  
+But my brain was like: "Nope, only Cherry matters" 💭  
 
-    if (j === lines[i].length) deleting = true;
-    if (j === 0 && deleting) { deleting = false; i++; }
-  } else {
-    document.getElementById("typing").innerText = "Do you like me? 😳❤️";
+And honestly…  
+You’re not just cute…  
+
+You’re dangerously, illegally cute ⚠️😍  
+
+So tell me one thing Cherry...`;
+
+let index = 0;
+
+function typeParagraph() {
+  if (index < message.length) {
+    document.getElementById("typing").innerHTML += message.charAt(index);
+    index++;
+    setTimeout(typeParagraph, 35); // speed (lower = faster)
   }
-
-  setTimeout(typeEffect, deleting ? 40 : 80);
 }
-typeEffect();
+
+typeParagraph();
 
 // 🎵 MUSIC
 document.body.addEventListener("click", () => {
