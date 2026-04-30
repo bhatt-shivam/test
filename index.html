@@ -13,6 +13,20 @@ body {
   text-align: center;
 }
 
+/* 💥 SHAKE EFFECT */
+.shake {
+  animation: shake 0.5s;
+  animation-iteration-count: 4;
+}
+
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(5px, -5px); }
+  50% { transform: translate(-5px, 5px); }
+  75% { transform: translate(5px, 5px); }
+  100% { transform: translate(0px, 0px); }
+}
+
 .page {
   display: none;
   padding-top: 80px;
@@ -51,6 +65,7 @@ button {
   color: #e84118;
 }
 
+/* ❤️ HEARTS */
 .heart {
   position: fixed;
   animation: floatUp 4s linear infinite;
@@ -59,6 +74,18 @@ button {
 @keyframes floatUp {
   0% { transform: translateY(100vh); opacity: 1; }
   100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* 🌸 FLOWERS */
+.flower {
+  position: fixed;
+  top: -10px;
+  animation: fall 4s linear forwards;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 </style>
 </head>
@@ -81,12 +108,12 @@ button {
   <p>Terms & Conditions:</p>
   <p>• Unlimited hugs & kisses 😘😘🤗</p>
   <p>• Daily “I Love you” messages 💬</p>
-  <p>• 100%  on cam while in call 😏</p>
+  <p>• 100% on cam while in call 😏</p>
 
   <button class="next" onclick="goToPage3()">Continue 😏</button>
 </div>
 
-<!-- PAGE 3 (AUTO SCAN) -->
+<!-- PAGE 3 -->
 <div id="page3" class="page">
   <h1>Cuteness Scan 📊</h1>
   <p>Scanning Cherry’s cuteness 😏...</p>
@@ -156,14 +183,12 @@ document.body.addEventListener("click", () => {
   document.getElementById("bgMusic").play();
 }, { once: true });
 
-// 😈 NO BUTTON RUN
+// 😈 NO BUTTON
 const noBtn = document.getElementById("noBtn");
-
 function moveNo() {
   noBtn.style.left = Math.random() * (window.innerWidth - 100) + "px";
   noBtn.style.top = Math.random() * (window.innerHeight - 100) + "px";
 }
-
 noBtn.addEventListener("mouseover", moveNo);
 noBtn.addEventListener("click", moveNo);
 
@@ -183,12 +208,19 @@ function goToPage3() {
   startCutenessScan();
 }
 
+// 💥 FINAL PAGE WITH SHAKE + FLOWERS
 function finalPage() {
   showPage("page4");
+
+  // screen shake
+  document.body.classList.add("shake");
+  setTimeout(() => document.body.classList.remove("shake"), 2000);
+
   hearts();
+  flowers();
 }
 
-// 📊 CUTENESS AUTO SCAN (FIXED)
+// 📊 CUTENESS SCAN
 function startCutenessScan() {
   let value = 0;
   const max = 180;
@@ -218,7 +250,7 @@ function startCutenessScan() {
   }, 50);
 }
 
-// 💖 HEARTS
+// ❤️ HEARTS
 function hearts() {
   setInterval(() => {
     const h = document.createElement("div");
@@ -230,6 +262,24 @@ function hearts() {
 
     setTimeout(() => h.remove(), 4000);
   }, 200);
+}
+
+// 🌸 FLOWERS
+function flowers() {
+  const emojis = ["🌸","🌹","💐","🌺"];
+
+  setInterval(() => {
+    const f = document.createElement("div");
+    f.className = "flower";
+    f.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.fontSize = (20 + Math.random() * 20) + "px";
+
+    document.body.appendChild(f);
+
+    setTimeout(() => f.remove(), 4000);
+  }, 150);
 }
 
 </script>
