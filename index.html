@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>For My Cherry 🍒❤️</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
   margin: 0;
@@ -13,36 +14,28 @@ body {
   text-align: center;
 }
 
-/* 💥 SHAKE EFFECT */
+/* 💥 SHAKE */
 .shake {
   animation: shake 0.5s;
   animation-iteration-count: 4;
 }
-
 @keyframes shake {
-  0% { transform: translate(0px, 0px); }
-  25% { transform: translate(5px, -5px); }
-  50% { transform: translate(-5px, 5px); }
-  75% { transform: translate(5px, 5px); }
-  100% { transform: translate(0px, 0px); }
+  0% { transform: translate(0,0); }
+  25% { transform: translate(5px,-5px); }
+  50% { transform: translate(-5px,5px); }
+  75% { transform: translate(5px,5px); }
+  100% { transform: translate(0,0); }
 }
 
-.page {
-  display: none;
-  padding-top: 80px;
-}
-
-.active {
-  display: block;
-}
-
-h1 { font-size: 30px; }
+.page { display:none; padding-top:80px; }
+.active { display:block; }
 
 #typing {
   font-size: 20px;
   margin-top: 20px;
   color: #ff4757;
   font-weight: bold;
+  white-space: pre-line;
 }
 
 button {
@@ -54,9 +47,9 @@ button {
   margin: 10px;
 }
 
-.yes { background: #2ed573; color: white; }
-.no { background: #ff4757; color: white; position: absolute; }
-.next { background: #3742fa; color: white; }
+.yes { background:#2ed573; color:white; }
+.no { background:#ff4757; color:white; position:absolute; }
+.next { background:#3742fa; color:white; }
 
 .result {
   margin-top: 20px;
@@ -70,22 +63,20 @@ button {
   position: fixed;
   animation: floatUp 4s linear infinite;
 }
-
 @keyframes floatUp {
-  0% { transform: translateY(100vh); opacity: 1; }
-  100% { transform: translateY(-10vh); opacity: 0; }
+  0% { transform: translateY(100vh); opacity:1; }
+  100% { transform: translateY(-10vh); opacity:0; }
 }
 
 /* 🌸 FLOWERS */
 .flower {
   position: fixed;
-  top: -10px;
+  top:-10px;
   animation: fall 4s linear forwards;
 }
-
 @keyframes fall {
-  0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+  0% { transform: translateY(-10vh) rotate(0deg); opacity:1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity:0; }
 }
 </style>
 </head>
@@ -105,7 +96,6 @@ button {
 <div id="page2" class="page">
   <h1>I KNEW IT, CHERRY 😎🍒❤️</h1>
   <p>Shiva Latha… you are officially Gujju’s now 💘</p>
-  <p>Terms & Conditions:</p>
   <p>• Unlimited hugs & kisses 😘😘🤗</p>
   <p>• Daily “I Love you” messages 💬</p>
   <p>• 100% on cam while in call 😏</p>
@@ -119,7 +109,6 @@ button {
   <p>Scanning Cherry’s cuteness 😏...</p>
 
   <h2 id="progressText">0%</h2>
-
   <div class="result" id="meterResult"></div>
 
   <button class="next" onclick="finalPage()" id="nextBtn" style="display:none;">
@@ -143,9 +132,14 @@ button {
   <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
 </audio>
 
+<!-- ⌨️ Typing sound -->
+<audio id="typeSound">
+  <source src="https://www.soundjay.com/mechanical/keyboard-typing-1.mp3">
+</audio>
+
 <script>
 
-// 💬 TYPING
+// 💬 ADVANCED TYPING
 const message = `Hey Cherry 🍒...
 
 Your Gujju has been thinking about you a lot 😏  
@@ -168,15 +162,35 @@ let index = 0;
 
 function typeParagraph() {
   if (index < message.length) {
-    document.getElementById("typing").innerHTML += message.charAt(index);
+    const char = message.charAt(index);
+    document.getElementById("typing").innerHTML += char;
+
+    // typing sound
+    const sound = document.getElementById("typeSound");
+    sound.currentTime = 0;
+    sound.play().catch(()=>{});
+
+    let delay = 35;
+
+    // pause after dots
+    if (char === ".") delay = 200;
+
+    // bigger pause on line break
+    if (char === "\n") delay = 300;
+
+    // 🤔 extra pause before final line
+    if (message.substring(index).startsWith("So tell me")) {
+      delay = 1000;
+    }
+
     index++;
-    setTimeout(typeParagraph, 35); // speed (lower = faster)
+    setTimeout(typeParagraph, delay);
   }
 }
 
 typeParagraph();
 
-// 🎵 MUSIC
+// 🎵 BG MUSIC
 document.body.addEventListener("click", () => {
   document.getElementById("bgMusic").play();
 }, { once: true });
@@ -190,7 +204,7 @@ function moveNo() {
 noBtn.addEventListener("mouseover", moveNo);
 noBtn.addEventListener("click", moveNo);
 
-// 🔄 NAVIGATION
+// NAVIGATION
 function showPage(id) {
   document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
   document.getElementById(id).classList.add("active");
@@ -206,11 +220,10 @@ function goToPage3() {
   startCutenessScan();
 }
 
-// 💥 FINAL PAGE WITH SHAKE + FLOWERS
+// FINAL
 function finalPage() {
   showPage("page4");
 
-  // screen shake
   document.body.classList.add("shake");
   setTimeout(() => document.body.classList.remove("shake"), 2000);
 
@@ -218,7 +231,7 @@ function finalPage() {
   flowers();
 }
 
-// 📊 CUTENESS SCAN
+// CUTENESS SCAN
 function startCutenessScan() {
   let value = 0;
   const max = 180;
@@ -248,7 +261,7 @@ function startCutenessScan() {
   }, 50);
 }
 
-// ❤️ HEARTS
+// HEARTS
 function hearts() {
   setInterval(() => {
     const h = document.createElement("div");
@@ -262,7 +275,7 @@ function hearts() {
   }, 200);
 }
 
-// 🌸 FLOWERS
+// FLOWERS
 function flowers() {
   const emojis = ["🌸","🌹","💐","🌺"];
 
