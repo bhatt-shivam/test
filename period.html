@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Cherry 🍒</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe0ec, #ffd6d6);
+  text-align: center;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 400px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+p {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.6;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.secondary {
+  background: #ff85a2;
+}
+
+.heart {
+  position: fixed;
+  animation: floatUp 4s linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>Hey Cherry 🍒❤️</h1>
+
+  <p id="message">
+    Just a small reminder from your Gujju 💌  
+    You don’t need to do anything today…  
+    Just rest, take care, and be gentle with yourself ❤️
+  </p>
+
+  <button onclick="showMessage()">Another message 💖</button>
+  <br>
+  <button class="secondary" onclick="sendHug()">Send virtual hug 🤗</button>
+</div>
+
+<script>
+const messages = [
+  "It’s okay to slow down today… your body deserves that care 💖",
+  "Rest more, worry less… I’ve got you ❤️",
+  "You don’t have to be strong today… just be comfortable 😌",
+  "Take your time… everything else can wait 🤍",
+  "Even on days like this, you’re still my favorite person 🍒",
+  "I wish I could be there to take care of you… for now this will do 🤗"
+];
+
+function showMessage() {
+  const random = messages[Math.floor(Math.random() * messages.length)];
+  document.getElementById("message").innerText = random;
+}
+
+// 🤗 Virtual Hug
+function sendHug() {
+  document.getElementById("message").innerText =
+    "Sending you the warmest hug right now 🤗❤️ Stay cozy, Cherry 🍒";
+
+  for (let i = 0; i < 15; i++) {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerText = "🤗";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = (20 + Math.random() * 20) + "px";
+    document.body.appendChild(h);
+
+    setTimeout(() => h.remove(), 4000);
+  }
+}
+</script>
+
+</body>
+</html>
