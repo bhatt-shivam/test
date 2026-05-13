@@ -1,0 +1,272 @@
+# 💖 May 13 Romantic Vibe Page
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>May 13 ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI',sans-serif;
+  overflow:hidden;
+  background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);
+  color:white;
+  height:100vh;
+}
+
+.page{
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:30px;
+}
+
+.active{
+  display:flex;
+}
+
+h1{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:20px;
+  line-height:1.8;
+  max-width:700px;
+}
+
+button{
+  margin-top:35px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#ff4d88;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:0 0 20px rgba(255,77,136,0.5);
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+/* glowing text */
+.glow{
+  position:absolute;
+  font-size:40px;
+  font-weight:bold;
+  color:#ff99cc;
+  text-shadow:
+    0 0 5px #ff99cc,
+    0 0 10px #ff99cc,
+    0 0 20px #ff4da6,
+    0 0 40px #ff4da6;
+  animation:fadeFloat 4s linear forwards;
+  pointer-events:none;
+}
+
+@keyframes fadeFloat{
+  0%{
+    opacity:0;
+    transform:scale(0.8) translateY(20px);
+  }
+  20%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+    transform:scale(1.3) translateY(-80px);
+  }
+}
+
+/* stars */
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:white;
+  border-radius:50%;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:0.2;}
+  to{opacity:1;}
+}
+
+/* hearts */
+.heart{
+  position:absolute;
+  font-size:22px;
+  animation:floatUp 5s linear forwards;
+}
+
+@keyframes floatUp{
+  0%{
+    transform:translateY(100vh);
+    opacity:1;
+  }
+  100%{
+    transform:translateY(-10vh);
+    opacity:0;
+  }
+}
+
+.dateText{
+  font-size:70px;
+  font-weight:bold;
+  margin-bottom:20px;
+  color:#fff;
+  text-shadow:
+    0 0 10px #fff,
+    0 0 20px #ff4da6,
+    0 0 40px #ff4da6;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>Hey Cherry 🍒❤️</h1>
+
+  <p id="typing"></p>
+
+  <button onclick="nextPage()">Continue 😏</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+
+  <div class="dateText">MAY 13 ❤️</div>
+
+  <p>
+    Some people remember dates because of songs...<br><br>
+
+    But Gujju will remember May 13 because of Cherry 🍒❤️
+  </p>
+
+</div>
+
+<!-- music -->
+<audio id="bgMusic" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3">
+</audio>
+
+<script>
+
+// ⭐ stars background
+for(let i=0;i<120;i++){
+  const star=document.createElement('div');
+  star.className='star';
+  star.style.left=Math.random()*100+'vw';
+  star.style.top=Math.random()*100+'vh';
+  star.style.animationDuration=(Math.random()*2+1)+'s';
+  document.body.appendChild(star);
+}
+
+// 💬 romantic typing
+const message=`
+There are many beautiful days in life... ✨
+
+But some dates suddenly become special for no reason.
+
+Maybe because of a moment...
+Maybe because of a smile...
+Or maybe because of one person ❤️
+
+And somehow...
+May 13 started feeling different to Gujju 😌
+`;
+
+let index=0;
+
+function typeText(){
+  if(index<message.length){
+    const char=message.charAt(index);
+    document.getElementById('typing').innerHTML+=char;
+
+    let delay=40;
+
+    if(char==='.') delay=200;
+    if(char==='\n') delay=350;
+
+    index++;
+    setTimeout(typeText,delay);
+  }
+}
+
+typeText();
+
+// 🎵 play music on tap
+window.addEventListener('click',()=>{
+  document.getElementById('bgMusic').play();
+},{once:true});
+
+// ❤️ floating hearts
+function hearts(){
+  setInterval(()=>{
+    const h=document.createElement('div');
+    h.className='heart';
+    h.innerText='❤️';
+
+    h.style.left=Math.random()*100+'vw';
+    h.style.fontSize=(20+Math.random()*20)+'px';
+
+    document.body.appendChild(h);
+
+    setTimeout(()=>h.remove(),5000);
+  },300);
+}
+
+// ✨ glowing texts
+function createGlow(){
+  const words=['May 13 ❤️','Mai Tera ❤️','Cherry 🍒','Gujju 😎'];
+
+  setInterval(()=>{
+    const glow=document.createElement('div');
+    glow.className='glow';
+
+    glow.innerText=words[Math.floor(Math.random()*words.length)];
+
+    glow.style.left=Math.random()*80+'vw';
+    glow.style.top=Math.random()*80+'vh';
+
+    document.body.appendChild(glow);
+
+    setTimeout(()=>glow.remove(),4000);
+  },700);
+}
+
+// next page
+function nextPage(){
+  document.getElementById('page1').classList.remove('active');
+  document.getElementById('page2').classList.add('active');
+
+  hearts();
+  createGlow();
+}
+
+</script>
+
+</body>
+</html>
+```
