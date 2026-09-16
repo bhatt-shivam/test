@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Cherry 🍒❤️</title>
+
+
+    <style>
+        /* =====================================================
+   GLOBAL
+===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            min-height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family: "Segoe UI", sans-serif;
+
+            background:
+                radial-gradient(circle at top left,
+                    #ffd6e0,
+                    transparent 35%),
+
+                radial-gradient(circle at bottom right,
+                    #ffc2d1,
+                    transparent 35%),
+
+                linear-gradient(135deg,
+                    #ff9a9e,
+                    #fad0c4);
+
+            min-height: 100vh;
+
+            /*
+    IMPORTANT:
+    Allow vertical scrolling on mobile.
+  */
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            text-align: center;
+
+            color: #444;
+        }
+
+
+        /* =====================================================
+   PAGE
+===================================================== */
+
+        .page {
+
+            display: none;
+
+            min-height: 100vh;
+
+            width: 100%;
+
+            padding:
+                40px 15px 60px;
+
+            position: relative;
+
+            z-index: 2;
+
+            /*
+    Don't hide content if it becomes taller
+    than the screen.
+  */
+            overflow: visible;
+        }
+
+
+        .page.active {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            min-height: 100vh;
+        }
+
+
+        /* =====================================================
+   CARD
+===================================================== */
+
+        .card {
+
+            width: min(92%, 600px);
+
+            padding:
+                35px 25px;
+
+            margin:
+                20px auto;
+
+            border-radius: 30px;
+
+            background:
+                rgba(255, 255, 255, 0.90);
+
+            box-shadow:
+
+                0 15px 40px rgba(255, 71, 87, 0.20),
+
+                0 0 40px rgba(255, 255, 255, 0.6);
+
+            backdrop-filter: blur(12px);
+
+            animation:
+                cardIn 0.8s ease;
+
+        }
+
+
+        @keyframes cardIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(30px) scale(0.95);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0) scale(1);
+
+            }
+
+        }
+
+
+        /* =====================================================
+   TEXT
+===================================================== */
+
+        h1 {
+
+            color: #ff4757;
+
+            font-size:
+                clamp(30px, 8vw, 48px);
+
+            margin-top: 0;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        h2 {
+
+            color: #ff4757;
+
+        }
+
+
+        p {
+
+            font-size: 18px;
+
+            line-height: 1.7;
+
+        }
+
+
+        .highlight {
+
+            color: #ff4757;
+
+            font-weight: bold;
+
+        }
+
+
+        .soft {
+
+            color: #777;
+
+        }
+
+
+        /* =====================================================
+   TYPING
+===================================================== */
+
+        #typing {
+
+            font-size: 19px;
+
+            line-height: 1.8;
+
+            color: #555;
+
+            white-space: pre-line;
+
+            /*
+    Don't force a huge empty area.
+  */
+            min-height: 0;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* =====================================================
+   BUTTONS
+===================================================== */
+
+        button {
+
+            border: none;
+
+            border-radius: 30px;
+
+            padding:
+                14px 28px;
+
+            margin:
+                10px;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+
+            box-shadow:
+                0 8px 18px rgba(0, 0, 0, 0.12);
+
+        }
+
+
+        button:hover {
+
+            transform:
+                scale(1.07);
+
+        }
+
+
+        button:active {
+
+            transform:
+                scale(0.96);
+
+        }
+
+
+        .primary {
+
+            background:
+                #ff4757;
+
+            color:
+                white;
+
+        }
+
+
+        .green {
+
+            background:
+                #2ed573;
+
+            color:
+                white;
+
+        }
+
+
+        .blue {
+
+            background:
+                #3742fa;
+
+            color:
+                white;
+
+        }
+
+
+        .pink {
+
+            background:
+                #ff6b81;
+
+            color:
+                white;
+
+        }
+
+
+        .gold {
+
+            background:
+                #ffa502;
+
+            color:
+                white;
+
+        }
+
+
+        /* =====================================================
+   SUNDAY REVEAL
+===================================================== */
+
+        .sunday {
+
+            font-size:
+                clamp(55px, 16vw, 100px);
+
+            font-weight:
+                900;
+
+            color:
+                #ff4757;
+
+            text-shadow:
+
+                0 0 10px rgba(255, 71, 87, 0.4),
+
+                0 0 30px rgba(255, 71, 87, 0.4);
+
+            animation:
+                pulse 1.5s infinite;
+
+        }
+
+
+        .bangalore {
+
+            font-size:
+                clamp(25px, 8vw, 45px);
+
+            font-weight:
+                bold;
+
+            color:
+                #3742fa;
+
+            margin-top:
+                5px;
+
+        }
+
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    scale(1.08);
+
+            }
+
+        }
+
+
+        /* =====================================================
+   EXAM DAY
+===================================================== */
+
+        .examDay {
+
+            font-size:
+                clamp(50px, 15vw, 90px);
+
+            font-weight:
+                900;
+
+            color:
+                #ff4757;
+
+            animation:
+                examPulse 1.5s infinite;
+
+        }
+
+
+        @keyframes examPulse {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    scale(1.05);
+
+            }
+
+        }
+
+
+        /* =====================================================
+   CONFIDENCE METER
+===================================================== */
+
+        #confidenceText {
+
+            font-size:
+                45px;
+
+            font-weight:
+                bold;
+
+            color:
+                #ff4757;
+
+            margin:
+                15px;
+
+        }
+
+
+        .meter-container {
+
+            width:
+                90%;
+
+            max-width:
+                500px;
+
+            height:
+                28px;
+
+            background:
+                #eee;
+
+            border-radius:
+                30px;
+
+            overflow:
+                hidden;
+
+            margin:
+                25px auto;
+
+            box-shadow:
+                inset 0 2px 6px rgba(0, 0, 0, 0.15);
+
+        }
+
+
+        .meter {
+
+            width:
+                0%;
+
+            height:
+                100%;
+
+            border-radius:
+                30px;
+
+            background:
+                linear-gradient(90deg,
+                    #ff6b81,
+                    #ff4757,
+                    #ff6348);
+
+            transition:
+                width 0.1s linear;
+
+        }
+
+
+        /* =====================================================
+   HUG
+===================================================== */
+
+        .hug {
+
+            font-size:
+                85px;
+
+            animation:
+                hugBounce 1s infinite;
+
+        }
+
+
+        @keyframes hugBounce {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    scale(1.2);
+
+            }
+
+        }
+
+
+        /* =====================================================
+   BIG HEART
+===================================================== */
+
+        .big-heart {
+
+            font-size:
+                60px;
+
+            animation:
+                heartbeat 1.2s infinite;
+
+        }
+
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+
+                transform:
+                    scale(1);
+
+            }
+
+            50% {
+
+                transform:
+                    scale(1.2);
+
+            }
+
+        }
+
+
+        /* =====================================================
+   FLOATING HEARTS
+===================================================== */
+
+        .heart {
+
+            position:
+                fixed;
+
+            bottom:
+                -50px;
+
+            pointer-events:
+                none;
+
+            z-index:
+                1;
+
+            animation:
+                floatUp linear forwards;
+
+        }
+
+
+        @keyframes floatUp {
+
+            from {
+
+                transform:
+                    translateY(0) rotate(0deg);
+
+                opacity:
+                    1;
+
+            }
+
+            to {
+
+                transform:
+                    translateY(-110vh) rotate(360deg);
+
+                opacity:
+                    0;
+
+            }
+
+        }
+
+
+        /* =====================================================
+   SPARKLES
+===================================================== */
+
+        .sparkle {
+
+            position:
+                fixed;
+
+            pointer-events:
+                none;
+
+            z-index:
+                5;
+
+            animation:
+                sparkleAnim 2s ease-out forwards;
+
+        }
+
+
+        @keyframes sparkleAnim {
+
+            0% {
+
+                transform:
+                    scale(0);
+
+                opacity:
+                    1;
+
+            }
+
+            100% {
+
+                transform:
+                    scale(2);
+
+                opacity:
+                    0;
+
+            }
+
+        }
+
+
+        /* =====================================================
+   SHAKE
+===================================================== */
+
+        .shake {
+
+            animation:
+                shake 0.5s;
+
+            animation-iteration-count:
+                4;
+
+        }
+
+
+        @keyframes shake {
+
+            0% {
+
+                transform:
+                    translate(0, 0);
+
+            }
+
+            25% {
+
+                transform:
+                    translate(5px, -5px);
+
+            }
+
+            50% {
+
+                transform:
+                    translate(-5px, 5px);
+
+            }
+
+            75% {
+
+                transform:
+                    translate(5px, 5px);
+
+            }
+
+            100% {
+
+                transform:
+                    translate(0, 0);
+
+            }
+
+        }
+
+
+        /* =====================================================
+   MOBILE FIX
+===================================================== */
+
+        @media (max-width: 600px) {
+
+            html {
+
+                overflow-x:
+                    hidden;
+
+                overflow-y:
+                    auto;
+
+            }
+
+
+            body {
+
+                overflow-x:
+                    hidden;
+
+                overflow-y:
+                    auto;
+
+                min-height:
+                    100vh;
+
+            }
+
+
+            .page {
+
+                /*
+      Important:
+      Don't force content into
+      exactly one screen.
+    */
+
+                min-height:
+                    100vh;
+
+                height:
+                    auto;
+
+                padding:
+                    25px 10px 60px;
+
+                align-items:
+                    flex-start;
+
+            }
+
+
+            .page.active {
+
+                min-height:
+                    100vh;
+
+                height:
+                    auto;
+
+                align-items:
+                    flex-start;
+
+                justify-content:
+                    center;
+
+            }
+
+
+            .card {
+
+                width:
+                    94%;
+
+                max-width:
+                    600px;
+
+                padding:
+                    28px 18px;
+
+                margin:
+                    20px auto 40px;
+
+            }
+
+
+            h1 {
+
+                font-size:
+                    clamp(28px,
+                        8vw,
+                        42px);
+
+            }
+
+
+            h2 {
+
+                font-size:
+                    25px;
+
+            }
+
+
+            p {
+
+                font-size:
+                    17px;
+
+                line-height:
+                    1.7;
+
+            }
+
+
+            #typing {
+
+                font-size:
+                    17px;
+
+                min-height:
+                    0;
+
+                line-height:
+                    1.75;
+
+            }
+
+
+            button {
+
+                font-size:
+                    16px;
+
+                padding:
+                    13px 22px;
+
+                margin:
+                    10px 5px;
+
+            }
+
+
+            .sunday {
+
+                font-size:
+                    18vw;
+
+            }
+
+
+            .bangalore {
+
+                font-size:
+                    9vw;
+
+            }
+
+
+            .examDay {
+
+                font-size:
+                    15vw;
+
+            }
+
+
+            #confidenceText {
+
+                font-size:
+                    40px;
+
+            }
+
+        }
+
+
+        /* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+        @media (max-width: 380px) {
+
+            .card {
+
+                width:
+                    96%;
+
+                padding:
+                    24px 14px;
+
+            }
+
+
+            p {
+
+                font-size:
+                    16px;
+
+            }
+
+
+            #typing {
+
+                font-size:
+                    16px;
+
+            }
+
+
+            button {
+
+                font-size:
+                    15px;
+
+                padding:
+                    12px 18px;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+     PAGE 1
+===================================================== -->
+
+    <div id="page1" class="page active">
+
+        <div class="card">
+
+            <h1>
+                Hey Cherry 🍒❤️
+            </h1>
+
+
+            <div id="typing"></div>
+
+
+            <button id="startButton" class="primary" onclick="goToPage2()" style="display:none;">
+
+                I'm listening 👀❤️
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     PAGE 2
+===================================================== -->
+
+    <div id="page2" class="page">
+
+        <div class="card">
+
+            <h1>
+                A Little Reminder ❤️
+            </h1>
+
+
+            <p>
+                I know your exam is coming on
+            </p>
+
+
+            <h2>
+                Thursday 📚
+            </h2>
+
+
+            <p>
+                And maybe sometimes you're going
+                to feel nervous...
+            </p>
+
+
+            <p>
+                Maybe your brain will say:
+            </p>
+
+
+            <p class="highlight">
+
+                "What if I can't do it?" 🥺
+
+            </p>
+
+
+            <p>
+                But Cherry...
+            </p>
+
+
+            <h2>
+                Don't underestimate yourself. ❤️
+            </h2>
+
+
+            <p>
+
+                You don't have to finish everything
+                in one go.
+
+                <br><br>
+
+                One chapter.
+
+                <br>
+
+                One question.
+
+                <br>
+
+                One little step at a time. 🌸
+
+            </p>
+
+
+            <button class="green" onclick="goToPage3()">
+
+                But wait... 👀
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     PAGE 3
+===================================================== -->
+
+    <div id="page3" class="page">
+
+        <div class="card">
+
+            <p>
+
+                You know what makes this exam week
+                a little different? 👀
+
+            </p>
+
+
+            <button class="primary" onclick="revealSunday()">
+
+                What? 🤔❤️
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     PAGE 4 — SUNDAY
+===================================================== -->
+
+    <div id="page4" class="page">
+
+        <div class="card">
+
+            <div class="sunday">
+                SUNDAY ❤️
+            </div>
+
+
+            <div class="bangalore">
+                BANGALORE 📍
+            </div>
+
+
+            <br>
+
+
+            <p style="font-size:21px;">
+
+                Your Gujju is coming. 🥹❤️
+
+            </p>
+
+
+            <p>
+
+                I'll be there with you
+
+                <br>
+
+                <strong>
+                    before your exam week even starts.
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                So this time...
+
+                <br><br>
+
+                You don't have to deal with
+                all that exam stress alone. ❤️
+
+            </p>
+
+
+            <p class="highlight">
+
+                I'll be right there. 🍒
+
+            </p>
+
+
+            <button class="pink" onclick="goToPage5()">
+
+                What happens then? 👀
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     PAGE 5
+===================================================== -->
+
+    <div id="page5" class="page">
+
+        <div class="card">
+
+            <h1>
+                Your Personal Support System 😎❤️
+            </h1>
+
+
+            <p>
+
+                Nervous?
+
+                <br>
+
+                Come find your Gujju. 🤗
+
+            </p>
+
+
+            <p>
+
+                Need motivation?
+
+                <br>
+
+                I'll give you some. 💪
+
+            </p>
+
+
+            <p>
+
+                Feeling tired?
+
+                <br>
+
+                Take a break.
+                I'll remind you. 😌
+
+            </p>
+
+
+            <p>
+
+                Need a hug?
+
+                <br>
+
+                <span class="highlight">
+                    Unlimited hugs available. 🤗❤️
+                </span>
+
+            </p>
+
+
+            <p>
+
+                And if you say...
+
+                <br>
+
+                <em>
+                    "Gujju, I can't do this..."
+                </em>
+
+            </p>
+
+
+            <h2>
+
+                I'll say:
+
+                <br>
+
+                "YES YOU CAN." 😎❤️
+
+            </h2>
+
+
+            <button class="blue" onclick="goToPage6()">
+
+                Test my confidence 😏
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     PAGE 6 — CONFIDENCE
+===================================================== -->
+
+    <div id="page6" class="page">
+
+        <div class="card">
+
+            <h1>
+                Cherry Confidence Scanner 📚❤️
+            </h1>
+
+
+            <p>
+                Let's check your exam confidence...
+            </p>
+
+
+            <div id="confidenceText">
+                0%
+            </div>
+
+
+            <div class="meter-container">
+
+                <div id="meter" class="meter">
+                </div>
+
+            </div>
+
+
+            <p id="scanMessage">
+
+                Initializing Gujju
+                motivation system... 😎
+
+            </p>
+
+
+            <button id="scanButton" class="green" onclick="startConfidence()">
+
+                Start Confidence Scan ✨
+
+            </button>
+
+
+            <button id="scanNext" class="pink" onclick="goToPage7()" style="display:none;">
+
+                Okay... one more thing 🤫
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     PAGE 7 — THURSDAY
+===================================================== -->
+
+    <div id="page7" class="page">
+
+        <div class="card">
+
+            <p>
+                And then...
+            </p>
+
+
+            <div class="examDay">
+                THURSDAY ❤️
+            </div>
+
+
+            <p style="font-size:25px;">
+
+                EXAM DAY 📚
+
+            </p>
+
+
+            <p>
+
+                Don't panic.
+
+                <br><br>
+
+                Don't overthink.
+
+                <br><br>
+
+                Just breathe...
+
+            </p>
+
+
+            <p class="highlight">
+
+                Read the question.
+
+                <br>
+
+                Trust yourself.
+
+                <br>
+
+                Give it your best.
+
+            </p>
+
+
+            <p>
+
+                I'll be somewhere nearby
+
+                <br>
+
+                cheering for my Cherry. 🍒❤️
+
+            </p>
+
+
+            <button class="gold" onclick="goToPage8()">
+
+                One sleepy message 😴
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     PAGE 8 — SLEEPY GUJJU
+===================================================== -->
+
+    <div id="page8" class="page">
+
+        <div class="card">
+
+            <h1>
+                If You're Reading This... 😴
+            </h1>
+
+
+            <p>
+
+                There is a good chance
+                your Gujju is sleeping right now. 😂
+
+            </p>
+
+
+            <div style="font-size:55px;">
+
+                😴💤
+
+            </div>
+
+
+            <p>
+
+                But even while sleeping...
+
+                <br><br>
+
+                somewhere in his brain:
+
+            </p>
+
+
+            <p class="highlight">
+
+                "I hope Cherry is studying well..." 🍒
+
+                <br><br>
+
+                "I hope she's eating properly..." 🥺
+
+                <br><br>
+
+                "I hope she's not stressing too much..." ❤️
+
+                <br><br>
+
+                "And I hope she knows..."
+
+            </p>
+
+
+            <h2>
+
+                I BELIEVE IN HER. ❤️
+
+            </h2>
+
+
+            <button class="primary" onclick="goToPage9()">
+
+                I need my hug 🤗
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     PAGE 9 — HUG
+===================================================== -->
+
+    <div id="page9" class="page">
+
+        <div class="card">
+
+            <div class="hug">
+                🤗
+            </div>
+
+
+            <h1>
+                HUG DELIVERED ❤️
+            </h1>
+
+
+            <p>
+
+                Delivery location:
+
+                <br>
+
+                <strong>
+                    Cherry 🍒
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                Sender:
+
+                <br>
+
+                <strong>
+                    Your Gujju 😎
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                Status:
+
+                <br>
+
+                <strong class="highlight">
+                    SUCCESSFULLY DELIVERED ❤️
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                But don't worry...
+
+                <br><br>
+
+                This is only the virtual one.
+
+                <br><br>
+
+                Your real hug...
+
+                <br>
+
+                <strong class="highlight">
+                    SUNDAY. 🥹❤️
+                </strong>
+
+            </p>
+
+
+            <button class="green" onclick="goToFinal()">
+
+                One last thing ❤️
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     FINAL PAGE
+===================================================== -->
+
+    <div id="finalPage" class="page">
+
+        <div class="card">
+
+            <div class="big-heart">
+                🍒❤️
+            </div>
+
+
+            <h1>
+                YOU GOT THIS.
+            </h1>
+
+
+            <p>
+
+                Thursday isn't bigger than you.
+
+                <br><br>
+
+                This exam is just one more thing
+                you're going to get through.
+
+                <br><br>
+
+                You don't need to be perfect.
+
+                <br>
+
+                Just give it everything
+                you've got. ❤️
+
+                <br><br>
+
+                And whenever you feel tired...
+
+                <br>
+
+                take a breath.
+
+                <br><br>
+
+                😌
+
+            </p>
+
+
+            <h2>
+
+                YOUR GUJJU
+                <br>
+                BELIEVES IN YOU. ❤️
+
+            </h2>
+
+
+            <p>
+
+                And he'll be there in Bangalore
+                very soon. 🍒
+
+            </p>
+
+
+            <p>
+
+                <strong>
+                    Sunday → Gujju arrives ❤️
+                </strong>
+
+                <br><br>
+
+                <strong>
+                    Thursday → Cherry conquers
+                    the exam 📚🔥
+                </strong>
+
+            </p>
+
+
+            <br>
+
+
+            <p class="highlight">
+
+                All the very best,
+                Cherry 🍒❤️
+
+                <br><br>
+
+                I believe in you.
+
+                <br>
+
+                Always. ❤️
+
+            </p>
+
+
+            <p style="color:#888;">
+
+                — Your sleepy Gujju 😴❤️
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+     MUSIC
+===================================================== -->
+
+    <audio id="bgMusic" loop>
+
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+
+    </audio>
+
+
+    <script>
+
+        /* =====================================================
+           TYPING INTRO
+        ===================================================== */
+
+        const message = `Before you start studying...
+
+Your Gujju has something important to tell you. ❤️
+
+I know your exam is coming on Thursday...
+
+And maybe you're going to feel nervous sometimes.
+
+Maybe you'll wonder if you're prepared enough...
+
+But Cherry...
+
+I want you to remember something.
+
+You are capable of much more than you think. 🍒❤️
+
+And this time...
+
+Your Gujju will be there with you very soon. 😌`;
+
+
+        let typingIndex = 0;
+
+
+        const typingElement =
+            document.getElementById("typing");
+
+
+        const startButton =
+            document.getElementById("startButton");
+
+
+        function typeMessage() {
+
+            if (
+                typingIndex <
+                message.length
+            ) {
+
+                const char =
+                    message.charAt(
+                        typingIndex
+                    );
+
+
+                typingElement.innerHTML +=
+                    char;
+
+
+                let delay = 38;
+
+
+                /*
+                  Longer pause after dots
+                */
+
+                if (char === ".") {
+
+                    delay = 350;
+
+                }
+
+
+                /*
+                  Longer pause between paragraphs
+                */
+
+                if (char === "\n") {
+
+                    delay = 500;
+
+                }
+
+
+                typingIndex++;
+
+
+                setTimeout(
+                    typeMessage,
+                    delay
+                );
+
+            }
+
+            else {
+
+                startButton.style.display =
+                    "inline-block";
+
+            }
+
+        }
+
+
+        typeMessage();
+
+
+        /* =====================================================
+           MUSIC
+        ===================================================== */
+
+        document.body.addEventListener(
+            "click",
+            function startMusic() {
+
+                const music =
+                    document.getElementById(
+                        "bgMusic"
+                    );
+
+
+                music
+                    .play()
+                    .catch(() => { });
+
+
+                document.body.removeEventListener(
+                    "click",
+                    startMusic
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           PAGE NAVIGATION
+        ===================================================== */
+
+        function showPage(id) {
+
+            document
+                .querySelectorAll(".page")
+                .forEach(page => {
+
+                    page.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+            document
+                .getElementById(id)
+                .classList.add("active");
+
+
+            /*
+              Whenever a new page opens,
+              bring the user back to the top.
+            */
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+
+
+        function goToPage2() {
+
+            showPage("page2");
+
+        }
+
+
+        function goToPage3() {
+
+            showPage("page3");
+
+        }
+
+
+        function revealSunday() {
+
+            showPage("page4");
+
+
+            createHearts();
+
+            createSparkles();
+
+
+            document.body.classList.add(
+                "shake"
+            );
+
+
+            setTimeout(() => {
+
+                document.body.classList.remove(
+                    "shake"
+                );
+
+            }, 2000);
+
+        }
+
+
+        function goToPage5() {
+
+            showPage("page5");
+
+        }
+
+
+        function goToPage6() {
+
+            showPage("page6");
+
+        }
+
+
+        function goToPage7() {
+
+            showPage("page7");
+
+            createHearts();
+
+        }
+
+
+        function goToPage8() {
+
+            showPage("page8");
+
+        }
+
+
+        function goToPage9() {
+
+            showPage("page9");
+
+            createHearts();
+
+            createSparkles();
+
+        }
+
+
+        function goToFinal() {
+
+            showPage("finalPage");
+
+            createHearts();
+
+            createSparkles();
+
+            createFlowers();
+
+
+            document.body.classList.add(
+                "shake"
+            );
+
+
+            setTimeout(() => {
+
+                document.body.classList.remove(
+                    "shake"
+                );
+
+            }, 2000);
+
+        }
+
+
+        /* =====================================================
+           CONFIDENCE SCANNER
+        ===================================================== */
+
+        let scanning = false;
+
+
+        function startConfidence() {
+
+            if (scanning) {
+
+                return;
+
+            }
+
+
+            scanning = true;
+
+
+            const meter =
+                document.getElementById(
+                    "meter"
+                );
+
+
+            const confidenceText =
+                document.getElementById(
+                    "confidenceText"
+                );
+
+
+            const scanMessage =
+                document.getElementById(
+                    "scanMessage"
+                );
+
+
+            const scanButton =
+                document.getElementById(
+                    "scanButton"
+                );
+
+
+            const scanNext =
+                document.getElementById(
+                    "scanNext"
+                );
+
+
+            scanButton.style.display =
+                "none";
+
+
+            let value = 0;
+
+
+            const messages = [
+
+                "Checking Cherry's confidence... 🔍",
+
+                "Loading Gujju motivation... 😎",
+
+                "Removing unnecessary exam stress... 🧠",
+
+                "Detecting hidden confidence... ❤️",
+
+                "Installing unlimited confidence... ✨",
+
+                "Cherry is getting stronger... 🍒",
+
+                "Almost there... 💪"
+
+            ];
+
+
+            let messageIndex = 0;
+
+
+            const interval =
+                setInterval(() => {
+
+
+                    value +=
+                        Math.floor(
+                            Math.random() * 4
+                        ) + 1;
+
+
+                    if (value >= 100) {
+
+                        value = 100;
+
+
+                        clearInterval(
+                            interval
+                        );
+
+
+                        meter.style.width =
+                            "100%";
+
+
+                        confidenceText.innerText =
+                            "100%";
+
+
+                        scanMessage.innerHTML = `
+
+          <strong>
+            CONFIDENCE FULLY LOADED. 😎❤️
+          </strong>
+
+          <br><br>
+
+          Warning:
+          Cherry is now unstoppable. 🔥
+
+        `;
+
+
+                        scanNext.style.display =
+                            "inline-block";
+
+
+                        createSparkles();
+
+                        createHearts();
+
+
+                        scanning = false;
+
+
+                        return;
+
+                    }
+
+
+                    meter.style.width =
+                        value + "%";
+
+
+                    confidenceText.innerText =
+                        value + "%";
+
+
+                    if (
+                        value % 15 < 4 &&
+                        messageIndex <
+                        messages.length
+                    ) {
+
+                        scanMessage.innerText =
+                            messages[
+                            messageIndex
+                            ];
+
+
+                        messageIndex++;
+
+                    }
+
+
+                }, 70);
+
+        }
+
+
+        /* =====================================================
+           FLOATING HEARTS
+        ===================================================== */
+
+        let heartsStarted = false;
+
+
+        function createHearts() {
+
+            if (heartsStarted) {
+
+                return;
+
+            }
+
+
+            heartsStarted = true;
+
+
+            setInterval(() => {
+
+
+                const heart =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                heart.className =
+                    "heart";
+
+
+                const emojis = [
+
+                    "❤️",
+                    "💗",
+                    "💖",
+                    "💕",
+                    "💘",
+                    "🍒"
+
+                ];
+
+
+                heart.innerText =
+                    emojis[
+                    Math.floor(
+                        Math.random() *
+                        emojis.length
+                    )
+                    ];
+
+
+                heart.style.left =
+                    Math.random() * 100 +
+                    "vw";
+
+
+                heart.style.fontSize =
+                    (
+                        18 +
+                        Math.random() * 25
+                    ) + "px";
+
+
+                heart.style.animationDuration =
+                    (
+                        4 +
+                        Math.random() * 4
+                    ) + "s";
+
+
+                document.body.appendChild(
+                    heart
+                );
+
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 8000);
+
+
+            }, 350);
+
+        }
+
+
+        /* =====================================================
+           SPARKLES
+        ===================================================== */
+
+        function createSparkles() {
+
+            for (
+                let i = 0;
+                i < 40;
+                i++
+            ) {
+
+
+                setTimeout(() => {
+
+
+                    const sparkle =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    sparkle.className =
+                        "sparkle";
+
+
+                    sparkle.innerText =
+                        "✨";
+
+
+                    sparkle.style.left =
+                        Math.random() * 100 +
+                        "vw";
+
+
+                    sparkle.style.top =
+                        Math.random() * 100 +
+                        "vh";
+
+
+                    sparkle.style.fontSize =
+                        (
+                            15 +
+                            Math.random() * 25
+                        ) + "px";
+
+
+                    document.body.appendChild(
+                        sparkle
+                    );
+
+
+                    setTimeout(() => {
+
+                        sparkle.remove();
+
+                    }, 2000);
+
+
+                }, i * 60);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FLOWERS
+        ===================================================== */
+
+        function createFlowers() {
+
+            const flowers = [
+
+                "🌸",
+                "🌹",
+                "🌺",
+                "🌷",
+                "💐"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < 60;
+                i++
+            ) {
+
+
+                setTimeout(() => {
+
+
+                    const flower =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    flower.className =
+                        "heart";
+
+
+                    flower.innerText =
+                        flowers[
+                        Math.floor(
+                            Math.random() *
+                            flowers.length
+                        )
+                        ];
+
+
+                    flower.style.left =
+                        Math.random() * 100 +
+                        "vw";
+
+
+                    flower.style.fontSize =
+                        (
+                            20 +
+                            Math.random() * 25
+                        ) + "px";
+
+
+                    flower.style.animationDuration =
+                        (
+                            4 +
+                            Math.random() * 3
+                        ) + "s";
+
+
+                    document.body.appendChild(
+                        flower
+                    );
+
+
+                    setTimeout(() => {
+
+                        flower.remove();
+
+                    }, 7000);
+
+
+                }, i * 80);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           START HEARTS
+        ===================================================== */
+
+        setTimeout(() => {
+
+            createHearts();
+
+        }, 2500);
+
+    </script>
+
+</body>
+
+</html>
