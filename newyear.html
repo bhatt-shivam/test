@@ -1,843 +1,790 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Nutan Varshabhinandan Cherry 🍒❤️</title>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
 
-* {
-    box-sizing: border-box;
-}
+<style>
+* { box-sizing: border-box; }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-    margin: 0;
-    min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #3b160e, #762b16, #a64b20);
-    color: #fff8e8;
-    text-align: center;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(145deg,#35140c,#702719,#a34b20);
+  color: #fff8e8;
+  font-family: Poppins,sans-serif;
+  text-align: center;
 }
 
-/* BACKGROUND */
-
 .background-glow {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(circle at 15% 20%, rgba(255,180,60,.18), transparent 35%),
-        radial-gradient(circle at 85% 80%, rgba(255,100,70,.18), transparent 35%);
-    z-index: 0;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 10% 15%,#ffb43d22,transparent 35%),
+    radial-gradient(circle at 90% 85%,#ff6b4525,transparent 35%);
 }
 
 .page {
-    display: none;
-    min-height: 100vh;
-    width: 100%;
-    padding: 45px 15px 65px;
-    position: relative;
-    z-index: 2;
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  padding: 35px 12px 65px;
+  position: relative;
+  z-index: 2;
 }
 
 .page.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .card {
-    width: min(94%, 650px);
-    padding: 35px 25px;
-    margin: 20px auto;
-    background: rgba(255, 248, 225, .97);
-    color: #62301b;
-    border: 2px solid #e8b65d;
-    border-radius: 25px;
-    box-shadow: 0 15px 50px rgba(0,0,0,.3);
-    animation: appear .8s ease;
+  width: min(95%,680px);
+  padding: 32px 23px;
+  margin: 15px auto;
+  border: 2px solid #e8b65d;
+  border-radius: 25px;
+  background: #fff8e9;
+  color: #62301b;
+  box-shadow: 0 15px 50px #0005;
+  animation: appear .7s ease;
 }
 
 @keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(25px) scale(.96);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+  from {opacity:0;transform:translateY(20px);}
+  to {opacity:1;transform:translateY(0);}
 }
-
-/* HEADINGS */
 
 h1 {
-    color: #a33c17;
-    font-size: clamp(28px, 7vw, 43px);
-    line-height: 1.4;
+  color: #a33c17;
+  font-size: clamp(27px,7vw,42px);
+  line-height: 1.45;
 }
 
-h2 {
-    color: #b34c1e;
-}
-
-p {
-    font-size: 17px;
-    line-height: 1.9;
-}
+h2 { color:#ad481c; }
+p { font-size:16px;line-height:1.9; }
 
 .gujarati {
-    font-family: 'Noto Sans Gujarati', sans-serif;
+  font-family:"Noto Sans Gujarati",sans-serif;
 }
 
 .telugu {
-    font-family: 'Noto Sans Telugu', sans-serif;
+  font-family:"Noto Sans Telugu",sans-serif;
 }
 
-.gold {
-    color: #bd7418;
-    font-weight: 800;
-}
-
-/* BUTTONS */
+.gold { color:#bd7418;font-weight:700; }
 
 button {
-    border: none;
-    border-radius: 30px;
-    padding: 14px 27px;
-    margin: 10px;
-    background: linear-gradient(135deg, #e88b22, #c34b18);
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgba(140,50,10,.25);
-    transition: .3s;
+  border:0;
+  border-radius:30px;
+  padding:13px 23px;
+  margin:9px 5px;
+  background:linear-gradient(135deg,#e88b22,#c34b18);
+  color:white;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 5px 15px #8c320a35;
+  transition:.25s;
 }
 
-button:hover {
-    transform: scale(1.06);
-}
+button:hover { transform:scale(1.05); }
+button:active { transform:scale(.96); }
 
-button:active {
-    transform: scale(.96);
+.secondary {
+  background:linear-gradient(135deg,#d66c70,#a52d46);
 }
-
-/* MAIN GREETING */
 
 .lamp {
-    font-size: 65px;
-    animation: glow 2s infinite alternate;
+  font-size:65px;
+  animation:glow 1.8s infinite alternate;
 }
 
 @keyframes glow {
-    from {
-        filter: drop-shadow(0 0 5px #ffb52e);
-    }
-    to {
-        filter: drop-shadow(0 0 25px #ffb52e);
-    }
+  from {filter:drop-shadow(0 0 4px #ffb52e);}
+  to {filter:drop-shadow(0 0 24px #ffb52e);}
 }
 
-.main-gujarati {
-    font-size: clamp(25px, 7vw, 38px);
-    color: #a33c17;
-    font-weight: 800;
-    line-height: 1.8;
+.greeting {
+  font-size:clamp(23px,6vw,37px);
+  color:#a33c17;
+  font-weight:800;
+  line-height:1.8;
 }
 
-.main-telugu {
-    font-size: clamp(21px, 6vw, 31px);
-    color: #a33c17;
-    font-weight: 700;
-    line-height: 1.8;
+.telugu-greeting {
+  font-size:clamp(20px,5.5vw,30px);
+  color:#a33c17;
+  font-weight:700;
+  line-height:1.9;
 }
 
-.heart {
-    color: #d84936;
-    font-size: 30px;
+.section-card {
+  background:#fff0d3;
+  border-left:5px solid #d68a27;
+  border-radius:17px;
+  padding:18px;
+  margin:15px 0;
+  text-align:left;
 }
 
-/* TRADITIONS */
+.section-card h3 { color:#a33c17;margin-top:0; }
 
-.tradition {
-    background: #fff1d3;
-    padding: 20px;
-    border-radius: 18px;
-    margin: 15px 0;
-    border-left: 5px solid #d68a27;
-    text-align: left;
+.food-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin-top:20px;
 }
 
-.tradition h3 {
-    color: #a33c17;
-    margin-top: 0;
+.food {
+  padding:16px 8px;
+  background:#fff0d3;
+  border:1px solid #e7c58a;
+  border-radius:16px;
+  cursor:pointer;
+  color:#71391e;
+  font-weight:700;
+  font-size:16px;
 }
 
-.tradition p {
-    margin-bottom: 0;
+.food span {
+  display:block;
+  font-size:35px;
+  margin-bottom:7px;
 }
 
-.tradition-icon {
-    font-size: 38px;
+#foodInfo {
+  min-height:95px;
+  padding:15px;
+  background:#fff0d3;
+  border-radius:15px;
+  margin-top:15px;
 }
 
-/* FINAL */
+.rangoli-grid {
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:5px;
+  width:min(100%,390px);
+  margin:20px auto;
+  padding:12px;
+  background:#3b2119;
+  border-radius:50%;
+  aspect-ratio:1;
+}
+
+.rangoli-cell {
+  border-radius:50%;
+  background:#f7dcae;
+  border:2px solid #d5a96a;
+  cursor:pointer;
+  min-width:0;
+  aspect-ratio:1;
+  transition:.15s;
+}
+
+.rangoli-cell:active { transform:scale(.8); }
+
+.palette {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:9px;
+  margin:15px 0;
+}
+
+.color-choice {
+  width:37px;
+  height:37px;
+  border-radius:50%;
+  border:3px solid white;
+  box-shadow:0 2px 6px #0003;
+  cursor:pointer;
+}
+
+.color-choice.selected {
+  outline:3px solid #9c481b;
+  outline-offset:2px;
+}
+
+.fortune-box {
+  background:#fff0d3;
+  padding:25px 15px;
+  border-radius:20px;
+  min-height:150px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin:20px 0;
+}
+
+.fortune-text {
+  color:#a33c17;
+  font-weight:700;
+  font-size:19px;
+  line-height:1.8;
+}
+
+.dictionary-word {
+  padding:15px;
+  background:#fff0d3;
+  border-radius:13px;
+  margin:10px 0;
+  text-align:left;
+}
+
+.dictionary-word button {
+  margin:5px 0;
+}
+
+.letter {
+  text-align:left;
+  line-height:2;
+  white-space:pre-line;
+  font-size:17px;
+  min-height:160px;
+}
 
 .final-heart {
-    font-size: 65px;
-    animation: heartbeat 1.3s infinite;
+  font-size:65px;
+  animation:heartbeat 1.3s infinite;
 }
 
 @keyframes heartbeat {
-    50% {
-        transform: scale(1.2);
-    }
+  50% {transform:scale(1.18);}
 }
 
-/* FLOATING FLOWERS */
-
 .floating {
-    position: fixed;
-    bottom: -40px;
-    pointer-events: none;
-    z-index: 1;
-    animation: floatUp linear forwards;
+  position:fixed;
+  bottom:-40px;
+  z-index:1;
+  pointer-events:none;
+  animation:floatUp linear forwards;
 }
 
 @keyframes floatUp {
-    to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
+  to {
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
 }
 
-/* FIREWORKS */
-
 .firework {
-    position: fixed;
-    pointer-events: none;
-    z-index: 10;
-    animation: explode 1.5s ease-out forwards;
+  position:fixed;
+  z-index:10;
+  pointer-events:none;
+  animation:explode 1.5s ease-out forwards;
 }
 
 @keyframes explode {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(2.5);
-        opacity: 0;
-    }
-}
-
-/* FOOTER */
-
-.signature {
-    color: #9a481e;
-    font-weight: 700;
-    margin-top: 25px;
+  0% {transform:scale(0);opacity:1;}
+  100% {transform:scale(2.5);opacity:0;}
 }
 
 @media(max-width:600px) {
-
-    .page {
-        padding: 25px 10px 55px;
-        align-items: flex-start;
-    }
-
-    .page.active {
-        align-items: flex-start;
-    }
-
-    .card {
-        width: 96%;
-        padding: 28px 17px;
-        margin: 15px auto 35px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    button {
-        font-size: 15px;
-        padding: 13px 21px;
-    }
+  .page {padding:20px 8px 55px;}
+  .card {padding:25px 15px;width:97%;}
+  p {font-size:15px;}
+  button {font-size:14px;padding:12px 19px;}
+  .food-grid {gap:8px;}
+  .rangoli-grid {gap:3px;padding:8px;}
 }
 </style>
 </head>
 
 <body>
-
 <div class="background-glow"></div>
 
 <!-- PAGE 1 -->
-
 <section id="page1" class="page active">
-
 <div class="card">
-
-    <div class="lamp">🪔</div>
-
-    <h1>Hey Cherry 🍒❤️</h1>
-
-    <p>
-        Today is a very special day for your Gujju...
-    </p>
-
-    <p>
-        And today I want to share something beautiful
-        from my Gujarati culture with you.
-    </p>
-
-    <p>
-        You know how I celebrate festivals...
-        but today I want you to experience one with me. ❤️
-    </p>
-
-    <h2>Ready for a little Gujarati celebration? ✨</h2>
-
-    <button onclick="nextPage(2)">
-        Let's Celebrate! 🪔
-    </button>
-
+  <div class="lamp">🪔</div>
+  <h1>Hey Cherry 🍒❤️</h1>
+  <p>Today is a very special day for your Gujju...</p>
+  <p>I want to share a little piece of my Gujarati culture with you.</p>
+  <p>Not just explain a festival, but let you experience it. 🥹</p>
+  <h2>Ready for a little celebration?</h2>
+  <button onclick="nextPage(2)">Let's Celebrate! 🪔</button>
 </div>
-
 </section>
-
 
 <!-- PAGE 2 -->
-
 <section id="page2" class="page">
-
 <div class="card">
-
-    <div class="lamp">✨🪔✨</div>
-
-    <h1>Gujarati New Year ❤️</h1>
-
-    <h2 class="gujarati">
-        નૂતન વર્ષાભિનંદન
-    </h2>
-
-    <p>
-        In Gujarat, we celebrate Gujarati New Year
-        as <strong>Bestu Varas</strong>.
-    </p>
-
-    <p>
-        It marks a fresh beginning, a new year
-        filled with hopes, blessings and happiness.
-    </p>
-
-    <p>
-        Families visit relatives, seek blessings
-        from elders, wear new clothes and exchange
-        good wishes.
-    </p>
-
-    <p class="gold">
-        A new beginning. A new chapter.
-        A new reason to smile. ❤️
-    </p>
-
-    <button onclick="nextPage(3)">
-        Show me your traditions 👀
-    </button>
-
+  <div class="lamp">✨🪔✨</div>
+  <h1>Gujarati New Year</h1>
+  <h2 class="gujarati">નૂતન વર્ષાભિનંદન</h2>
+  <p>In Gujarat, we celebrate the New Year as <b>Bestu Varas</b>.</p>
+  <p>It marks a fresh beginning, a new year filled with hopes, blessings and happiness.</p>
+  <p>Families visit relatives, seek blessings from elders, wear new clothes and exchange good wishes.</p>
+  <p class="gold">A new beginning. A new chapter. A new reason to smile. ❤️</p>
+  <button onclick="nextPage(3)">Show me your traditions 👀</button>
 </div>
-
 </section>
-
 
 <!-- PAGE 3 -->
-
 <section id="page3" class="page">
-
 <div class="card">
+  <h1>Our Little Traditions 🪔</h1>
 
-    <h1>Let me show you something 🥰</h1>
+  <div class="section-card">
+    <h3>🌸 Rangoli & Diyas</h3>
+    <p>We decorate our homes with colourful rangoli, flowers and diyas. They represent positivity, light and welcoming good things.</p>
+  </div>
 
-    <div class="tradition">
+  <div class="section-card">
+    <h3>🙏 Blessings from Elders</h3>
+    <p>We visit family members and elders, take their blessings and wish everyone happiness and prosperity.</p>
+  </div>
 
-        <div class="tradition-icon">🪔</div>
+  <div class="section-card">
+    <h3>📖 Chopda Pujan</h3>
+    <p>Many Gujarati business families worship their account books and begin a fresh financial year with prayers for success.</p>
+  </div>
 
-        <h3>1. Rangoli & Diyas</h3>
+  <div class="section-card">
+    <h3>🍚 Annakut</h3>
+    <p>A beautiful offering of different food items to God, expressing gratitude and devotion.</p>
+  </div>
 
-        <p>
-            We decorate our homes with colourful rangoli,
-            flowers and beautiful diyas.
-            They represent positivity, light and
-            welcoming good things into our lives.
-        </p>
-
-    </div>
-
-
-    <div class="tradition">
-
-        <div class="tradition-icon">🙏</div>
-
-        <h3>2. Blessings from Elders</h3>
-
-        <p>
-            We visit our family members and elders,
-            take their blessings and wish everyone
-            happiness and prosperity.
-        </p>
-
-    </div>
-
-
-    <div class="tradition">
-
-        <div class="tradition-icon">📖</div>
-
-        <h3>3. Chopda Pujan</h3>
-
-        <p>
-            Many Gujarati business families worship
-            their account books and begin a fresh
-            financial year with prayers for success
-            and prosperity.
-        </p>
-
-    </div>
-
-
-    <div class="tradition">
-
-        <div class="tradition-icon">🍚</div>
-
-        <h3>4. Annakut</h3>
-
-        <p>
-            A beautiful offering of different food
-            items to God, expressing gratitude
-            and devotion.
-        </p>
-
-    </div>
-
-
-    <button onclick="nextPage(4)">
-        Tell me more ❤️
-    </button>
-
+  <button onclick="nextPage(4)">Let's explore Gujarati food 🍬</button>
 </div>
-
 </section>
 
-
-<!-- PAGE 4 -->
-
+<!-- PAGE 4 FOOD -->
 <section id="page4" class="page">
-
 <div class="card">
+  <h1>Welcome to Gujju's Food World 😋</h1>
+  <p>Cherry, tap each dish and discover some Gujarati favourites!</p>
 
-    <h1>One more cute Gujarati thing 😋</h1>
+  <div class="food-grid">
+    <button class="food" onclick="showFood('jalebi')"><span>🍥</span>Jalebi</button>
+    <button class="food" onclick="showFood('fafda')"><span>🥨</span>Fafda</button>
+    <button class="food" onclick="showFood('dhokla')"><span>🍰</span>Dhokla</button>
+    <button class="food" onclick="showFood('thepla')"><span>🫓</span>Thepla</button>
+    <button class="food" onclick="showFood('khandvi')"><span>🌯</span>Khandvi</button>
+    <button class="food" onclick="showFood('shrikhand')"><span>🍨</span>Shrikhand</button>
+  </div>
 
-    <div class="tradition">
+  <div id="foodInfo">
+    <b>Choose something, Cherry! 🍒</b>
+    <p>Your Gujju will introduce you to it.</p>
+  </div>
 
-        <div class="tradition-icon">🍬</div>
-
-        <h3>Sweet Beginnings</h3>
-
-        <p>
-            Festivals are incomplete without sweets
-            and delicious food!
-        </p>
-
-        <p>
-            We share sweets with family and friends
-            and celebrate together.
-        </p>
-
-    </div>
-
-    <div class="tradition">
-
-        <div class="tradition-icon">🧂</div>
-
-        <h3>Sabras</h3>
-
-        <p>
-            In some Gujarati families, salt is bought
-            on New Year as a symbol of welcoming
-            all the flavours of life.
-        </p>
-
-        <p>
-            Because life should have happiness,
-            sweetness, challenges and beautiful memories.
-        </p>
-
-    </div>
-
-    <p class="gold">
-        And honestly, Cherry...
-        every celebration is better when shared
-        with someone special. ❤️
-    </p>
-
-    <button onclick="nextPage(5)">
-        Now I have a wish for you 🥹
-    </button>
-
+  <p class="gold">One day, we'll enjoy all these together. ❤️</p>
+  <button onclick="nextPage(5)">Let's make a Rangoli 🎨</button>
 </div>
-
 </section>
 
-
-<!-- PAGE 5 — GUJARATI WISH -->
-
+<!-- PAGE 5 RANGOLI -->
 <section id="page5" class="page">
-
 <div class="card">
+  <h1>Cherry's First Rangoli 🎨</h1>
+  <p>Choose a colour and tap the circles to decorate your rangoli!</p>
 
-    <div class="lamp">🪔❤️</div>
+  <div class="palette" id="palette">
+    <button class="color-choice selected" style="background:#ff4757" data-color="#ff4757" aria-label="Red"></button>
+    <button class="color-choice" style="background:#ffa502" data-color="#ffa502" aria-label="Orange"></button>
+    <button class="color-choice" style="background:#2ed573" data-color="#2ed573" aria-label="Green"></button>
+    <button class="color-choice" style="background:#3742fa" data-color="#3742fa" aria-label="Blue"></button>
+    <button class="color-choice" style="background:#e056fd" data-color="#e056fd" aria-label="Purple"></button>
+    <button class="color-choice" style="background:#fff" data-color="#ffffff" aria-label="White"></button>
+    <button class="color-choice" style="background:#ffd700" data-color="#ffd700" aria-label="Gold"></button>
+  </div>
 
-    <h1>My New Year Wish for You</h1>
+  <div class="rangoli-grid" id="rangoli"></div>
 
-    <h2 class="gujarati">
-        નૂતન વર્ષાભિનંદન, મારી Cherry! 🍒
-    </h2>
-
-    <p>
-        આ નવું વર્ષ તારા જીવનમાં સુખ,
-        શાંતિ, સમૃદ્ધિ અને અનેક ખુશીઓ
-        લઈને આવે.
-    </p>
-
-    <p>
-        તારા દરેક સપના પૂરા થાય અને
-        તારા ચહેરા પર હંમેશા સ્મિત રહે.
-    </p>
-
-    <p class="gold">
-        May this new year bring you happiness,
-        peace, prosperity and countless
-        beautiful moments.
-    </p>
-
-    <button onclick="nextPage(6)">
-        Now in your language ❤️
-    </button>
-
+  <button class="secondary" onclick="clearRangoli()">Clear Rangoli</button>
+  <p id="rangoliMessage" class="gold">Your beautiful creation is waiting! ❤️</p>
+  <button onclick="nextPage(6)">My Rangoli is ready! 🌸</button>
 </div>
-
 </section>
 
-
-<!-- PAGE 6 — TELUGU WISH -->
-
+<!-- PAGE 6 CULTURES -->
 <section id="page6" class="page">
-
 <div class="card">
+  <h1>Two Cultures, One Beautiful Bond ❤️</h1>
 
-    <div class="lamp">🌸🪔</div>
+  <div class="section-card">
+    <h3>🧡 Gujarati Traditions</h3>
+    <p>Bestu Varas, rangoli, Chopda Pujan, family blessings, sweets and festive gatherings.</p>
+  </div>
 
-    <h1>A Wish in Your Language ❤️</h1>
+  <div class="section-card">
+    <h3>💚 Telugu Traditions</h3>
+    <p>Ugadi, pachadi with different flavours, mango leaves, rangoli or muggu, prayers and new beginnings.</p>
+  </div>
 
-    <h2 class="telugu">
-        నూతన సంవత్సర శుభాకాంక్షలు,
-        నా Cherry! 🍒❤️
-    </h2>
+  <p>Our traditions may be different, but we both celebrate family, hope, happiness and fresh beginnings.</p>
+  <p class="gold">I want to learn your traditions too, Cherry. ❤️</p>
 
-    <p class="telugu">
-        ఈ కొత్త సంవత్సరం నీ జీవితంలో
-        సంతోషం, శాంతి, ఐశ్వర్యం మరియు
-        ఎన్నో ఆనందాలను తీసుకురావాలని
-        కోరుకుంటున్నాను.
-    </p>
-
-    <p class="telugu">
-        నీ కలలన్నీ నెరవేరాలి,
-        నీ ముఖంపై ఎప్పుడూ చిరునవ్వు ఉండాలి.
-    </p>
-
-    <h2>English Meaning ❤️</h2>
-
-    <p>
-        May this new year bring happiness,
-        peace, prosperity and countless
-        beautiful moments into your life.
-    </p>
-
-    <p>
-        May all your dreams come true
-        and may your face always have a smile.
-    </p>
-
-    <button onclick="nextPage(7)">
-        One last surprise for Cherry 👀
-    </button>
-
+  <button onclick="nextPage(7)">Give me my New Year fortune ✨</button>
 </div>
-
 </section>
 
-
-<!-- PAGE 7 — ROMANTIC MESSAGE -->
-
+<!-- PAGE 7 FORTUNE -->
 <section id="page7" class="page">
-
 <div class="card">
+  <div class="lamp">🔮</div>
+  <h1>Cherry's New Year Fortune</h1>
+  <p>Let's see what the universe has planned for you!</p>
 
-    <div class="final-heart">🍒❤️</div>
+  <div class="fortune-box">
+    <div class="fortune-text" id="fortuneText">
+      Your special New Year prediction is waiting... 🍒
+    </div>
+  </div>
 
-    <h1>Dear Cherry...</h1>
-
-    <p>
-        You know something?
-    </p>
-
-    <p>
-        Today, I'm not just wishing you
-        a Happy New Year.
-    </p>
-
-    <p>
-        I'm sharing a little piece of my Gujarat
-        with you.
-    </p>
-
-    <p>
-        You speak Telugu, I speak Gujarati...
-        We have different languages,
-        different traditions and different ways
-        of celebrating.
-    </p>
-
-    <p class="gold">
-        But happiness, love, blessings
-        and beautiful beginnings
-        have no language. ❤️
-    </p>
-
-    <p>
-        I hope we get to celebrate many more
-        festivals together, learn each other's
-        traditions and create beautiful memories.
-    </p>
-
-    <button onclick="nextPage(8)">
-        Open your final wish ❤️
-    </button>
-
+  <button onclick="revealFortune()">Reveal My Fortune ✨</button>
+  <button class="secondary" onclick="nextPage(8)">Make a wish 🪔</button>
 </div>
-
 </section>
 
-
-<!-- FINAL PAGE -->
-
+<!-- PAGE 8 WISH -->
 <section id="page8" class="page">
-
 <div class="card">
+  <div class="lamp" id="wishLamp">🪔</div>
+  <h1>Make a New Year Wish ❤️</h1>
+  <p>Close your eyes for a moment, Cherry.</p>
+  <p>Think of one beautiful wish for your new year.</p>
 
-    <div class="lamp">🪔✨🪔</div>
+  <input id="wishInput" type="text"
+    placeholder="Write your wish here..."
+    maxlength="120"
+    style="width:100%;padding:14px;border:2px solid #e8b65d;border-radius:15px;font-size:16px;">
 
-    <h1>Happy Gujarati New Year! ❤️</h1>
+  <br><br>
+  <button onclick="lightWish()">Light My Diya ✨</button>
 
-    <h2 class="gujarati">
-        નૂતન વર્ષાભિનંદન, મારી Cherry! 🍒
-    </h2>
+  <div id="wishResult" class="gold" style="margin-top:20px;line-height:1.8;"></div>
 
-    <h2 class="telugu">
-        నూతన సంవత్సర శుభాకాంక్షలు,
-        నా Cherry! ❤️
-    </h2>
-
-    <br>
-
-    <div class="final-heart">❤️</div>
-
-    <p>
-        This year, I wish you endless happiness,
-        good health, success and peace.
-    </p>
-
-    <p>
-        May every little dream of yours
-        come true.
-    </p>
-
-    <p>
-        And one selfish wish from your Gujju...
-    </p>
-
-    <h2 class="gold">
-        May every new year bring us closer
-        and give us more memories together. 🥹
-    </h2>
-
-    <p>
-        I want to celebrate your festivals too,
-        just like I want you to experience mine.
-    </p>
-
-    <p>
-        Because your happiness is also
-        a part of my happiness. ❤️
-    </p>
-
-    <br>
-
-    <div class="final-heart">🍒💗</div>
-
-    <h2>
-        Love you, Cherry!
-    </h2>
-
-    <p class="signature">
-        — Your Gujju 😎❤️
-    </p>
-
-    <button onclick="celebrate()">
-        Celebrate with me! 🎉
-    </button>
-
-    <p id="celebrationMessage"
-       class="gold"
-       style="display:none;">
-        A thousand wishes, a million smiles
-        and unlimited love for my Cherry! ❤️
-    </p>
-
+  <button onclick="nextPage(9)">A little Gujarati dictionary 📚</button>
 </div>
-
 </section>
 
+<!-- PAGE 9 DICTIONARY -->
+<section id="page9" class="page">
+<div class="card">
+  <h1>Learn Gujarati with Gujju 😎</h1>
+  <p>Tap a word to discover its Telugu meaning.</p>
+
+  <div class="dictionary-word">
+    <b class="gujarati">પ્રેમ</b> — Prem
+    <br><button onclick="dictionary('love')">Meaning ❤️</button>
+    <div id="love" class="telugu"></div>
+  </div>
+
+  <div class="dictionary-word">
+    <b class="gujarati">ખુશી</b> — Khushi
+    <br><button onclick="dictionary('happiness')">Meaning 😊</button>
+    <div id="happiness" class="telugu"></div>
+  </div>
+
+  <div class="dictionary-word">
+    <b class="gujarati">આભાર</b> — Aabhar
+    <br><button onclick="dictionary('thanks')">Meaning 🙏</button>
+    <div id="thanks" class="telugu"></div>
+  </div>
+
+  <div class="dictionary-word">
+    <b class="gujarati">મીઠું</b> — Mithu
+    <br><button onclick="dictionary('sweet')">Meaning 🍬</button>
+    <div id="sweet" class="telugu"></div>
+  </div>
+
+  <div class="dictionary-word">
+    <b class="gujarati">નવું વર્ષ</b> — Navu Varsh
+    <br><button onclick="dictionary('newyear')">Meaning 🎉</button>
+    <div id="newyear" class="telugu"></div>
+  </div>
+
+  <button onclick="nextPage(10)">Open your secret letter 💌</button>
+</div>
+</section>
+
+<!-- PAGE 10 LETTER -->
+<section id="page10" class="page">
+<div class="card">
+  <div class="lamp">💌</div>
+  <h1>A Little Letter from Gujju</h1>
+  <p>Cherry, this one is just for you...</p>
+
+  <div id="letter" class="letter"></div>
+
+  <button id="letterButton" onclick="startLetter()">Open My Letter ❤️</button>
+  <button id="finalButton" style="display:none" onclick="nextPage(11)">One final surprise 🥹</button>
+</div>
+</section>
+
+<!-- PAGE 11 FINAL -->
+<section id="page11" class="page">
+<div class="card">
+  <div class="lamp">🪔✨🪔</div>
+  <div class="final-heart">🍒❤️</div>
+
+  <h1>Happy Gujarati New Year!</h1>
+
+  <h2 class="gujarati">
+    નૂતન વર્ષાભિનંદન, મારી Cherry!
+  </h2>
+
+  <h2 class="telugu-greeting">
+    నూతన సంవత్సర శుభాకాంక్షలు, నా Cherry!
+  </h2>
+
+  <p>Different languages, different traditions, but one beautiful bond.</p>
+
+  <p>May your life be filled with happiness, health, peace, success and countless beautiful memories.</p>
+
+  <h2 class="gold">May every new year bring us closer. 🥹</h2>
+
+  <p>I want to celebrate your festivals too, just like I want you to experience mine.</p>
+
+  <p>Because your happiness is also a part of my happiness. ❤️</p>
+
+  <div class="final-heart">💗</div>
+
+  <h2>Love you, Cherry!</h2>
+  <p class="gold">— Your Gujju 😎❤️</p>
+
+  <button onclick="celebrate()">Celebrate with me! 🎆</button>
+
+  <p id="celebrationMessage" class="gold" style="display:none">
+    A thousand wishes, a million smiles and unlimited love for my Cherry! ❤️
+  </p>
+</div>
+</section>
 
 <script>
-
-/* PAGE NAVIGATION */
-
+/* NAVIGATION */
 function nextPage(number) {
-
-    document.querySelectorAll(".page")
-        .forEach(page => {
-            page.classList.remove("active");
-        });
-
-    document.getElementById("page" + number)
-        .classList.add("active");
-
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.getElementById("page" + number).classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
 }
 
+/* FOOD EXPLORER */
+const foods = {
+  jalebi: ["Jalebi 🍥","A crispy, spiral-shaped sweet soaked in sugar syrup. Sweet, juicy and delicious!"],
+  fafda: ["Fafda 🥨","A crunchy Gujarati snack made from gram flour. Often enjoyed with jalebi!"],
+  dhokla: ["Dhokla 🍰","A soft, fluffy and savoury steamed snack made from fermented batter."],
+  thepla: ["Thepla 🫓","A delicious Gujarati flatbread, often made with spices and fenugreek leaves."],
+  khandvi: ["Khandvi 🌯","Soft, delicate rolls made from gram flour and yoghurt, with a lovely tempering."],
+  shrikhand: ["Shrikhand 🍨","A creamy sweet yoghurt dessert flavoured with saffron or cardamom."]
+};
 
-/* FLOATING FLOWERS AND DIYAS */
+function showFood(key) {
+  const food = foods[key];
+  document.getElementById("foodInfo").innerHTML =
+    "<h3>" + food[0] + "</h3><p>" + food[1] + "</p>";
+}
 
+/* INTERACTIVE RANGOLI */
+let selectedColor = "#ff4757";
+const rangoli = document.getElementById("rangoli");
+
+for(let i=0;i<49;i++) {
+  const cell = document.createElement("div");
+  cell.className = "rangoli-cell";
+  cell.addEventListener("click",() => {
+    cell.style.background = selectedColor;
+    document.getElementById("rangoliMessage").textContent =
+      "Beautiful! Keep decorating, Cherry! 🍒";
+  });
+  rangoli.appendChild(cell);
+}
+
+document.querySelectorAll(".color-choice").forEach(button => {
+  button.addEventListener("click",() => {
+    selectedColor = button.dataset.color;
+    document.querySelectorAll(".color-choice").forEach(b => b.classList.remove("selected"));
+    button.classList.add("selected");
+  });
+});
+
+function clearRangoli() {
+  document.querySelectorAll(".rangoli-cell").forEach(cell => {
+    cell.style.background = "#f7dcae";
+  });
+  document.getElementById("rangoliMessage").textContent =
+    "Fresh rangoli canvas ready! 🎨";
+}
+
+/* FORTUNE MACHINE */
+const fortunes = [
+  "This year, you will smile more than you expect. Gujju may be responsible. 😎❤️",
+  "A beautiful surprise is waiting somewhere in your year. 🍒",
+  "Your hard work will bring you closer to your dreams. 🌸",
+  "Warning: Excessive cuteness detected. Please behave! 😂",
+  "More adventures, more laughter and more memories are coming. ❤️",
+  "Your luck says: unlimited hugs are approaching. 🤗",
+  "A special person will keep cheering for you. Hint: He's Gujarati! 😏",
+  "May your heart always find reasons to be happy. 💗"
+];
+
+function revealFortune() {
+  const result = fortunes[Math.floor(Math.random()*fortunes.length)];
+  document.getElementById("fortuneText").textContent = result;
+  sparkleBurst();
+}
+
+/* WISH AND DIYA */
+function lightWish() {
+  const wish = document.getElementById("wishInput").value.trim();
+
+  document.getElementById("wishLamp").textContent = "🪔✨";
+
+  document.getElementById("wishResult").innerHTML =
+    wish
+    ? "Your wish has been sent to the universe! ❤️<br><br>May it come true, Cherry. 🌸"
+    : "You don't need to type your wish. Keep it in your heart. ❤️";
+
+  sparkleBurst();
+}
+
+/* GUJARATI- TELUGU DICTIONARY */
+const dictionaryMeanings = {
+  love: "ప్రేమ (Prema) ❤️",
+  happiness: "సంతోషం (Santosham) 😊",
+  thanks: "ధన్యవాదాలు (Dhanyavaadalu) 🙏",
+  sweet: "తీపి (Theepi) 🍬",
+  newyear: "కొత్త సంవత్సరం (Kotta Samvatsaram) 🎉"
+};
+
+function dictionary(key) {
+  document.getElementById(key).textContent =
+    dictionaryMeanings[key];
+}
+
+/* SECRET LETTER */
+const letterText =
+`Dear Cherry 🍒❤️
+
+Today I shared a little piece of my Gujarat with you.
+
+I hope you enjoyed discovering our traditions, food, colours and celebrations.
+
+But there's something more important I want you to know...
+
+I don't just want you to know my culture.
+
+I want to know yours too.
+
+I want to learn your Telugu words, understand your festivals, enjoy your favourite food and celebrate the things that make you happy.
+
+Maybe our traditions are different...
+
+But I hope we create our own beautiful traditions together.
+
+May this new year bring you all the happiness you deserve.
+
+And may we make many more memories together.
+
+નૂતન વર્ષાભિનંદન, મારી Cherry! 🍒❤️
+
+నూతన సంవత్సర శుభాకాంక్షలు, నా Cherry! ❤️
+
+With lots of love,
+
+Your Gujju 😎❤️`;
+
+let letterStarted = false;
+
+function startLetter() {
+  if(letterStarted) return;
+  letterStarted = true;
+
+  document.getElementById("letterButton").style.display = "none";
+
+  let i = 0;
+  const output = document.getElementById("letter");
+
+  function type() {
+    if(i < letterText.length) {
+      output.textContent += letterText.charAt(i);
+      i++;
+      setTimeout(type,28);
+    } else {
+      document.getElementById("finalButton").style.display = "inline-block";
+    }
+  }
+
+  type();
+}
+
+/* FLOATING FESTIVAL EMOJIS */
 let floatingStarted = false;
 
 function startFloating() {
+  if(floatingStarted) return;
+  floatingStarted = true;
 
-    if (floatingStarted) return;
+  const emojis = ["🌸","🌺","✨","❤️","🪔","🌼"];
 
-    floatingStarted = true;
-
-    const emojis = [
-        "🌸",
-        "🌺",
-        "✨",
-        "❤️",
-        "🪔",
-        "🌼"
-    ];
-
-    setInterval(() => {
-
-        const item = document.createElement("div");
-
-        item.className = "floating";
-
-        item.innerText =
-            emojis[Math.floor(Math.random() * emojis.length)];
-
-        item.style.left = Math.random() * 100 + "vw";
-
-        item.style.fontSize =
-            (18 + Math.random() * 25) + "px";
-
-        item.style.animationDuration =
-            (5 + Math.random() * 5) + "s";
-
-        document.body.appendChild(item);
-
-        setTimeout(() => item.remove(), 10000);
-
-    }, 450);
-
+  setInterval(() => {
+    const item = document.createElement("div");
+    item.className = "floating";
+    item.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    item.style.left = Math.random()*100 + "vw";
+    item.style.fontSize = (18+Math.random()*25) + "px";
+    item.style.animationDuration = (5+Math.random()*5) + "s";
+    document.body.appendChild(item);
+    setTimeout(() => item.remove(),10000);
+  },500);
 }
 
 startFloating();
 
-
-/* FIREWORKS */
-
-function celebrate() {
-
-    const emojis = [
-        "🎆",
-        "🎇",
-        "✨",
-        "❤️",
-        "🌸",
-        "🪔",
-        "💖"
-    ];
-
-    for (let i = 0; i < 65; i++) {
-
-        setTimeout(() => {
-
-            const firework =
-                document.createElement("div");
-
-            firework.className = "firework";
-
-            firework.innerText =
-                emojis[Math.floor(Math.random() * emojis.length)];
-
-            firework.style.left =
-                Math.random() * 100 + "vw";
-
-            firework.style.top =
-                Math.random() * 100 + "vh";
-
-            firework.style.fontSize =
-                (20 + Math.random() * 30) + "px";
-
-            document.body.appendChild(firework);
-
-            setTimeout(() => firework.remove(), 1600);
-
-        }, i * 35);
-
-    }
-
-    document.getElementById("celebrationMessage")
-        .style.display = "block";
-
+/* SPARKLES */
+function sparkleBurst() {
+  const emojis = ["✨","💖","🌸","🪔"];
+  for(let i=0;i<25;i++) {
+    setTimeout(() => {
+      const item = document.createElement("div");
+      item.className = "firework";
+      item.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+      item.style.left = Math.random()*100 + "vw";
+      item.style.top = Math.random()*100 + "vh";
+      item.style.fontSize = (20+Math.random()*25) + "px";
+      document.body.appendChild(item);
+      setTimeout(() => item.remove(),1600);
+    },i*40);
+  }
 }
 
+/* FINAL CELEBRATION */
+function celebrate() {
+  sparkleBurst();
+  document.getElementById("celebrationMessage").style.display = "block";
+  for(let i=0;i<35;i++) {
+    setTimeout(() => {
+      const item = document.createElement("div");
+      item.className = "firework";
+      item.textContent = ["🎆","🎇","❤️","🌸","✨"][Math.floor(Math.random()*5)];
+      item.style.left = Math.random()*100 + "vw";
+      item.style.top = Math.random()*100 + "vh";
+      item.style.fontSize = "30px";
+      document.body.appendChild(item);
+      setTimeout(() => item.remove(),1600);
+    },i*50);
+  }
+}
 </script>
 
 </body>
